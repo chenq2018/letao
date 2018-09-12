@@ -1,0 +1,63 @@
+@charset "utf-8";
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+body,
+.mui-content {
+  background-color: #fff;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.clearfix::after,
+.clearfix::before {
+  content: "";
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+  clear: both;
+}
+.mui-bar-tab .mui-tab-item.mui-active {
+  color: darkorange;
+}
+.my-header {
+  background-color: #006699;
+}
+.my-header > h1 {
+  color: #fff;
+}
+.my-header > a {
+  color: #fff;
+}
+.my-footer {
+  background-color: #006699;
+}
+.my-footer > .mui-tab-item {
+  color: #fff;
+}
+.my-footer > a:nth-of-type(3) > span:first-of-type {
+  top: 3px;
+  width: 24px;
+  height: 24px;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 24px;
+}
+.my-footer > a:nth-of-type(3) > span:last-of-type {
+  font-size: 11px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

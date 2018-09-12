@@ -1,0 +1,71 @@
+@charset "utf-8";
+*,::before,::after {
+  margin: 0;
+  padding: 0;
+  //移动端
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+body, .mui-content {
+  background-color: #fff;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+ul,ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.clearfix::after,.clearfix::before {
+  content: "";
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+  clear: both;
+}
+.mui-bar-tab .mui-tab-item.mui-active {
+  color: darkorange;
+}
+//定义字体图标
+//@font-face {
+//  font-family: wjs_font_icon;
+//  src:
+//  url(../fonts/MiFie-Web-Font.eot) format('embedded-opentype'),
+//  url(../fonts/MiFie-Web-Font.svg) format('svg'),
+//  url(../fonts/MiFie-Web-Font.ttf) format('truetype'),
+//  url(../fonts/MiFie-Web-Font.woff) format('woff');
+//}
+.my-header {
+  background-color: #006699;
+  > h1 {
+    color: #fff;
+  }
+  > a {
+    color: #fff;
+  }
+}
+.my-footer {
+  background-color: #006699;
+  > .mui-tab-item {
+      color: #fff;
+  }
+  > a:nth-of-type(3) {
+    > span:first-of-type {
+      top: 3px;
+      width: 24px;
+      height: 24px;
+      padding-top: 0;
+      padding-bottom: 0;
+      font-size: 24px;
+    }
+    > span:last-of-type {
+      font-size: 11px;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
