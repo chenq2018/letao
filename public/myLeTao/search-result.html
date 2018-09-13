@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <!--引入css-->
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/search-result.css"/>
+    <!--引入字体图标-->
+    <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css"/>
+    <script src="assets/mui/js/mui.min.js"></script>
+    <!--引入zepto.js-->
+    <script src="js/zepto.min.js"></script>
+    <!--引入模板引擎-->
+    <script src="js/template-web.js"></script>
+    <script src="js/search-result.js"></script>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav my-header">
+    <h1 class="mui-title">搜索结果</h1>
+</header>
+<nav class="mui-bar mui-bar-tab my-footer">
+    <a class="mui-tab-item mui-active" href="index.html">
+        <span class="mui-icon mui-icon-home"></span>
+        <span class="mui-tab-label">首页</span>
+    </a>
+    <a class="mui-tab-item" href="html/category.html">
+        <span class="mui-icon mui-icon-bars"></span>
+        <span class="mui-tab-label">分类</span>
+    </a>
+    <a class="mui-tab-item" href="html/cart.html">
+        <span class="fa fa-shopping-cart"></span>
+        <span class="mui-tab-label">购物车</span>
+    </a>
+    <a class="mui-tab-item" href="html/user.html">
+        <span class="mui-icon mui-icon-person"></span>
+        <span class="mui-tab-label">会员中心</span>
+    </a>
+</nav>
+<!--上拉刷新需要有个盒子包裹内容-->
+<div class="mui-content" id="refreshContainer">
+    <div>
+        <!--价格、销量栅格布局-->
+        <div class="mui-content">
+            <div class="mui-row backgroundColor">
+                <div class="mui-col-sm-6 mui-col-xs-12">
+                    <div class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            价格
+                            <span class="mui-icon mui-icon-arrowdown font"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="mui-col-sm-6 mui-col-xs-12">
+                    <div class="mui-table-view-cell">
+                        <a class="mui-navigate-right">
+                            销量
+                            <span class="mui-icon mui-icon-arrowdown font"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--模板引擎-->
+        <script type="text/html" id="sports">
+            <% for(var i = 0; i < item.length; i++) { %>
+            <li>
+                <a href="javaScript:;"><img src="<%=item[i].pic[0].picAddr %>" alt=""/></a>
+                <h4><%=item[i].proName %></h4>
+                <p><%=item[i].price %><span><%=item[i].oldPrice %></span></p>
+                <a href="javaScript:;">立即购买</a>
+            </li>
+            <% } %>
+        </script>
+
+        <!--<a href="javaScript:;"><img src="{{$value.pic[0].picAddr}}" alt=""/></a>-->
+
+        <!--运动-->
+        <div class="sport mui-clearfix">
+            <ul>
+                <!--<li>-->
+                <!--<a href="javaScript:;"><img src="images/product.jpg" alt=""/></a>-->
+                <!--<h4>adidas阿迪达斯 男式 场下休闲篮球鞋S83700</h4>-->
+                <!--<p>¥560.00<span>¥888.0</span></p>-->
+                <!--<a href="javaScript:;">立即购买</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="javaScript:;"><img src="images/product.jpg" alt=""/></a>-->
+                <!--<h4>adidas阿迪达斯 男式 场下休闲篮球鞋S83700</h4>-->
+                <!--<p>¥560.00<span>¥888.0</span></p>-->
+                <!--<a href="javaScript:;">立即购买</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="javaScript:;"><img src="images/product.jpg" alt=""/></a>-->
+                <!--<h4>adidas阿迪达斯 男式 场下休闲篮球鞋S83700</h4>-->
+                <!--<p>¥560.00<span>¥888.0</span></p>-->
+                <!--<a href="javaScript:;">立即购买</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="javaScript:;"><img src="images/product.jpg" alt=""/></a>-->
+                <!--<h4>adidas阿迪达斯 男式 场下休闲篮球鞋S83700</h4>-->
+                <!--<p>¥560.00<span>¥888.0</span></p>-->
+                <!--<a href="javaScript:;">立即购买</a>-->
+                <!--</li>-->
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
