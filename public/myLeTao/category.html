@@ -14,6 +14,8 @@
     <!--引入zepto.js-->
     <script src="js/zepto.min.js"></script>
     <script src="js/category.js"></script>
+    <!--引入template模板-->
+    <script src="js/template.js"></script>
 </head>
 <body>
 <header class="mui-bar mui-bar-nav my-header">
@@ -38,40 +40,63 @@
         <span class="mui-tab-label">会员中心</span>
     </a>
 </nav>
+
+<!--引入模板-->
+<script type="text/template" id="categoryLeft">
+   {{each item}}
+      <li data-id="{{$value.id}}">{{$value.categoryName}}</li>
+   {{/each}}
+</script>
+
+<!--引入模板-->
+<script type="text/template" id="categoryRight">
+    {{each item}}
+       <li>
+           <a href="javaScript:;">
+               <img src="{{$value.brandLogo}}" alt=""/>
+               <p>{{$value.brandName}}</p>
+           </a>
+       </li>
+    {{/each}}
+</script>
+
 <div class="mui-content">
     <div class="category_left">
         <div class="mui-scroll-wrapper">
             <div class="mui-scroll">
                 <!--这里放置真实显示的DOM内容-->
                 <ul>
-                    <li class="now">运动馆</li>
-                    <li>女士馆</li>
-                    <li>男士馆</li>
-                    <li>机布馆</li>
-                    <li>户外馆</li>
-                    <li>户外馆</li>
-                    <li>户外馆</li>
-                    <li>户外馆</li>
-                    <li>户外馆</li>
-                    <li>户外馆</li>
-                    <li>户外馆</li>
-                    <li>户外馆</li>
+                    <!--<li class="now">运动馆</li>-->
+                    <!--<li>女士馆</li>-->
+                    <!--<li>男士馆</li>-->
+                    <!--<li>机布馆</li>-->
+                    <!--<li>户外馆</li>-->
+                    <!--<li>户外馆</li>-->
+                    <!--<li>户外馆</li>-->
+                    <!--<li>户外馆</li>-->
+                    <!--<li>户外馆</li>-->
+                    <!--<li>户外馆</li>-->
+                    <!--<li>户外馆</li>-->
+                    <!--<li>户外馆</li>-->
                 </ul>
             </div>
         </div>
     </div>
     <div class="category_right">
         <ul>
-            <li><a href="javaScript:;"><img src="images/brand1.png" alt=""/></a></li>
-            <li><a href="javaScript:;"><img src="images/brand2.png" alt=""/></a></li>
-            <li><a href="javaScript:;"><img src="images/brand3.png" alt=""/></a></li>
-            <li><a href="javaScript:;"><img src="images/brand4.png" alt=""/></a></li>
-            <li><a href="javaScript:;"><img src="images/brand5.png" alt=""/></a></li>
-            <li><a href="javaScript:;"><img src="images/brand6.png" alt=""/></a></li>
-            <li><a href="javaScript:;"><img src="images/brand7.png" alt=""/></a></li>
-            <li><a href="javaScript:;"><img src="images/brand8.png" alt=""/></a></li>
+            <!--<li><a href="javaScript:;"><img src="images/brand1.png" alt=""/></a></li>-->
+            <!--<li><a href="javaScript:;"><img src="images/brand2.png" alt=""/></a></li>-->
+            <!--<li><a href="javaScript:;"><img src="images/brand3.png" alt=""/></a></li>-->
+            <!--<li><a href="javaScript:;"><img src="images/brand4.png" alt=""/></a></li>-->
+            <!--<li><a href="javaScript:;"><img src="images/brand5.png" alt=""/></a></li>-->
+            <!--<li><a href="javaScript:;"><img src="images/brand6.png" alt=""/></a></li>-->
+            <!--<li><a href="javaScript:;"><img src="images/brand7.png" alt=""/></a></li>-->
+            <!--<li><a href="javaScript:;"><img src="images/brand8.png" alt=""/></a></li>-->
         </ul>
     </div>
 </div>
+
+<!--引入category.js-->
+<script src="js/category.js"></script>
 </body>
 </html>

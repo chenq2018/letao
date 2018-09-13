@@ -6,6 +6,13 @@
   width: 100%;
   background: #f5f5f5;
 }
+.rightStyle {
+  width: 100%;
+  padding-top: 50%;
+  font-size: 30px;
+  text-align: center;
+  color: #ccc;
+}
 .category_left {
   width: 100px;
   height: 100%;
@@ -53,4 +60,7 @@
 .category_right > ul > li > a > img {
   width: 100%;
   display: block;
+}
+.category_right > ul > li > a > p {
+  text-align: center;
 }
