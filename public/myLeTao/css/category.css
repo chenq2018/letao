@@ -1,0 +1,66 @@
+@charset "utf-8";
+.mui-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: #f5f5f5;
+}
+.rightStyle {
+  width: 100%;
+  padding-top: 50%;
+  font-size: 30px;
+  text-align: center;
+  color: #ccc;
+}
+.category_left {
+  width: 100px;
+  height: 100%;
+  color: #00111b;
+  float: left;
+  background-color: #f5f5f5;
+  position: relative;
+}
+.category_left .mui-scroll > ul {
+  width: 100%;
+  background-color: #fff;
+}
+.category_left .mui-scroll > ul > li {
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  color: #000;
+  font-size: 15px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.category_left .mui-scroll > ul > li.now {
+  background-color: #F5f5f5;
+  border-right: none;
+  border-bottom: none;
+}
+.category_right {
+  height: 100%;
+  margin-left: 110px;
+  margin-top: 10px;
+  background-color: #fff;
+}
+.category_right > ul {
+  width: 100%;
+}
+.category_right > ul > li {
+  width: 33.33%;
+  float: left;
+}
+.category_right > ul > li > a {
+  width: 100%;
+  display: block;
+}
+.category_right > ul > li > a > img {
+  width: 100%;
+  display: block;
+}
+.category_right > ul > li > a > p {
+  text-align: center;
+}
