@@ -8,6 +8,10 @@ var value = getURL(location.href, 'keyword');
 //console.log(value);
 var page = 1;
 var html = '';
+//定义初始排序顺序，依据接口文档
+var priceSort = 1;
+//改变this指向问题
+var that = null;
 
 $(function(){
 
@@ -25,7 +29,22 @@ $(function(){
         }
     });
 
-    //实现下拉加载，使用mui模板
+    //实现价格排序工能，价格点击事件，click事件无法弹窗，用tap
+    $("#price").on("tap", function(){
+        //alert('aa');
+        //每点一次，就实现顺逆的互换，1升序 2降序
+        priceSort = priceSort == 1 ? 2 : 1;
+        //初始化参数
+        html = "";
+        page = 1;
+        //重置上拉加载，mui组件
+        //pullup-container为在mui.init方法中配置的pullRefresh节点中的container参数；
+        //注意：refresh()中需传入true
+        mui('#refreshContainer').pullRefresh().refresh(true);
+        //重新渲染
+        ajax();
+    })
+
 
 });
 
@@ -65,8 +84,10 @@ function getURL(url, name){
 }
 
 function ajax(){
-    //重置this
-    var that = this;
+    //重置this，改变this指向
+    if(!that){
+       that = this;
+    }
 
     //ajax请求搜索结果
     $.ajax({
@@ -75,7 +96,8 @@ function ajax(){
         data: {
             proName: value,
             page: page++,
-            pageSize: 3
+            pageSize: 3,
+            price: priceSort
         },
         success: function(result){
            //判断数据是否存在
