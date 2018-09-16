@@ -13,6 +13,7 @@
     <script src="assets/mui/js/mui.min.js"></script>
     <!--引入zepto.js-->
     <script src="js/zepto.min.js"></script>
+    <script src="js/public.js"></script>
     <!--引入模板引擎-->
     <script src="js/template-web.js"></script>
     <script src="js/search-result.js"></script>
@@ -68,7 +69,7 @@
         <script type="text/html" id="sports">
             <% for(var i = 0; i < item.length; i++) { %>
             <li>
-                <a href="javaScript:;"><img src="<%=item[i].pic[0].picAddr %>" alt=""/></a>
+                <a href="detail.html?id=<%=item[i].id%>"><img src="<%=item[i].pic[0].picAddr %>" alt=""/></a>
                 <h4><%=item[i].proName %></h4>
                 <p><%=item[i].price %><span><%=item[i].oldPrice %></span></p>
                 <a href="javaScript:;">立即购买</a>

@@ -1,0 +1,90 @@
+@charset "utf-8";
+.orange {
+  background-color: darkorange;
+}
+.grey {
+  background-color: darkgray;
+}
+.pBox {
+  padding: 0 10px;
+  border-bottom: 1px solid #cccccc;
+}
+.pBox > p {
+  color: #000000;
+  font-size: 18px;
+}
+.price {
+  padding: 10px;
+  border-bottom: 1px solid #cccccc;
+}
+.price > span {
+  padding-left: 5px;
+}
+.price > span:first-of-type {
+  color: #E80C02;
+  font-size: 18px;
+}
+.price > span:last-of-type {
+  color: #9e9696;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+.size {
+  font-size: 15px;
+  padding: 10px;
+}
+.size > span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #cccccc;
+  margin: 10px 15px;
+  line-height: 2;
+  text-align: center;
+}
+.number {
+  padding: 10px;
+}
+.number > p {
+  font-size: 15px;
+  float: left;
+  padding: 5px 15px 0 0;
+}
+.number > p:last-of-type {
+  padding-left: 15px;
+}
+.number > span {
+  display: block;
+  float: left;
+  width: 30px;
+  height: 30px;
+  line-height: 1.5;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+.number > input {
+  float: left;
+  width: 30px;
+  height: 30px;
+  padding: 10px 0;
+  font-size: 15px;
+  text-align: center;
+}
+.box {
+  padding: 10px;
+}
+.box > a {
+  display: block;
+  float: left;
+  width: 50%;
+  font-size: 16px;
+  color: #000;
+  text-align: center;
+  padding: 15px 0;
+}
+.box > a:first-of-type {
+  background-color: red;
+}
+.box > a:last-of-type {
+  background-color: blue;
+}

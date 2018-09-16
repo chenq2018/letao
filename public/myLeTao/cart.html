@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <!--引入picker选择器css-->
+    <link rel="stylesheet" href="assets/mui/css/mui.picker.css">
+    <link rel="stylesheet" href="assets/mui/css/mui.poppicker.css">
+    <!--引入css-->
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/cart.css"/>
+    <!--引入字体图标-->
+    <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css"/>
+    <script src="assets/mui/js/mui.min.js"></script>
+    <!--引入picker选择器js-->
+    <script src="assets/mui/js/mui.picker.js"></script>
+    <script src="assets/mui/js/mui.poppicker.js"></script>
+    <!--引入js-->
+    <script src="js/zepto.min.js"></script>
+    <!--引入模板-->
+    <script src="js/template-web.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/cart.js"></script>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav my-header">
+    <a href="javaScript:;" class="mui-icon mui-icon-back"></a>
+    <h1 class="mui-title">购物车</h1>
+</header>
+<nav class="mui-bar mui-bar-tab my-footer">
+    <a class="mui-tab-item" href="index.html">
+        <span class="mui-icon mui-icon-home"></span>
+        <span class="mui-tab-label">首页</span>
+    </a>
+    <a class="mui-tab-item" href="category.html">
+        <span class="mui-icon mui-icon-bars"></span>
+        <span class="mui-tab-label">分类</span>
+    </a>
+    <a class="mui-tab-item mui-active" href="cart.html">
+        <span class="fa fa-shopping-cart"></span>
+        <span class="mui-tab-label">购物车</span>
+    </a>
+    <a class="mui-tab-item" href="user.html">
+        <span class="mui-icon mui-icon-person"></span>
+        <span class="mui-tab-label">会员中心</span>
+    </a>
+</nav>
+
+<!--引用模板-->
+<script type="text/html" id="cartTemp">
+  {{each item}}
+      <li class="mui-table-view-cell mui-media">
+          <a href="javascript:;" class="cartBox">
+              <div class="mui-slider-right mui-disabled">
+                  <a href="javaScript:;" class="mui-btn mui-btn-blue" data-id="{{$value.id}}" id="edit">编辑</a>
+                  <a href="javaScript:;" class="mui-btn mui-btn-red" data-id="{{$value.id}}" id="delete">删除</a>
+              </div>
+              <div class="mui-slider-handle" id="cartDiv">
+                  <img class="mui-media-object mui-pull-left" src="{{$value.pic[0].picAddr}}">
+                  <div class="mui-media-body boxRight">
+                      {{$value.proName}}
+                      <p class='mui-ellipsis'>
+                          <span>现价: {{$value.price}}</span>
+                          <span>原价: {{$value.oldPrice}}</span>
+                          <span>鞋码: {{$value.size}} x {{$value.num}}双</span>
+                      </p>
+                  </div>
+              </div>
+          </a>
+      </li>
+  {{/each}}
+</script>
+
+<div class="mui-content">
+    <ul class="mui-table-view" id="cartUl">
+        <!--<li class="mui-table-view-cell mui-media">-->
+            <!--<a href="javascript:;" class="cartBox">-->
+                <!--<img class="mui-media-object mui-pull-left" src="images/detail.jpg">-->
+                <!--<div class="mui-media-body boxRight">-->
+                    <!--【莹恋】MIZUNO美津浓V1GA159002乒乓球鞋男鞋女鞋室内综合训练鞋-->
+                    <!--<p class='mui-ellipsis'>-->
+                        <!--<span>现价: ￥112</span>-->
+                        <!--<span>原价: ￥342</span>-->
+                        <!--<span>鞋码: 35 x 1双</span>-->
+                    <!--</p>-->
+                <!--</div>-->
+            <!--</a>-->
+        <!--</li>-->
+    </ul>
+</div>
+</body>
+</html>
