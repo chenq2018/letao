@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+.center {
+  text-align: center;
+}
+//设置样式
+.mui-media {
+  margin-top: -15px;
+  .mui-media-body {
+    position: relative;
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      font-family: Muiicons;
+      font-size: inherit;
+      color: #bbb;
+      content: '\e583';
+    }
+  }
+}

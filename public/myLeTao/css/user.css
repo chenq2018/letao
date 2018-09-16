@@ -1,0 +1,19 @@
+@charset "utf-8";
+.center {
+  text-align: center;
+}
+.mui-media {
+  margin-top: -15px;
+}
+.mui-media .mui-media-body {
+  position: relative;
+}
+.mui-media .mui-media-body::after {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-family: Muiicons;
+  font-size: inherit;
+  color: #bbb;
+  content: '\e583';
+}
