@@ -2,19 +2,17 @@
  * Created by lenovo on 2018/9/12.
  */
 $(function(){
-    //»ñµÃslider²å¼ş¶ÔÏó
+    //ï¿½ï¿½ï¿½sliderï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     var gallery = mui('.mui-slider');
 
     gallery.slider({
 
-        interval:3000//×Ô¶¯ÂÖ²¥ÖÜÆÚ£¬ÈôÎª0Ôò²»×Ô¶¯²¥·Å£¬Ä¬ÈÏÎª0£»
+        interval:3000//è‡ªåŠ¨è½®æ’­å‘¨æœŸï¼Œè‹¥ä¸º0åˆ™ä¸è‡ªåŠ¨æ’­æ”¾ï¼Œé»˜è®¤ä¸º0ï¼›
 
     });
 
-    //Èç¹ûÏ£ÍûÊÖ¶¯È¥¿ØÖÆÂÖ²¥¡£Ôò½«intervalµÄ²ÎÊıÖµÉèÎª0¼´¿É¡£
-    //ÈôÒªÌø×ªµ½µÚxÕÅÍ¼Æ¬£¬Ôò¿ÉÒÔÊ¹ÓÃÍ¼Æ¬ÂÖ²¥²å¼şµÄgotoItem·½·¨£¬ÀıÈç£º
-    ////»ñµÃslider²å¼ş¶ÔÏó
+    ////è·å¾—slideræ’ä»¶å¯¹è±¡
     //var gallery = mui('.mui-slider');
-    //gallery.slider().gotoItem(index);//Ìø×ªµ½µÚindexÕÅÍ¼Æ¬£¬index´Ó0¿ªÊ¼£»
+    //gallery.slider().gotoItem(index);//è·³è½¬åˆ°ç¬¬indexå¼ å›¾ç‰‡ï¼Œindexä»0å¼€å§‹ï¼›
 });

@@ -7,22 +7,23 @@
     <link rel="stylesheet" href="assets/mui/css/mui.min.css">
     <!--引入css-->
     <link rel="stylesheet" href="css/base.css"/>
-    <link rel="stylesheet" href="css/search.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
     <!--引入字体图标-->
     <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css"/>
+    <!--引入css-->
+    <link rel="stylesheet" href="css/login.css"/>
     <script src="assets/mui/js/mui.min.js"></script>
     <!--引入zepto.js-->
     <script src="js/zepto.min.js"></script>
-    <!--引入模板引擎-->
-    <script src="js/template.js"></script>
-    <script src="js/search.js"></script>
     <!--引入公共js-->
     <script src="js/public.js"></script>
+    <!--引入js-->
+    <script src="js/login.js"></script>
 </head>
 <body>
 <header class="mui-bar mui-bar-nav my-header">
     <a href="javaScript:;" class="mui-icon mui-icon-back"></a>
-    <h1 class="mui-title">搜索中心</h1>
+    <h1 class="mui-title">登录</h1>
 </header>
 <nav class="mui-bar mui-bar-tab my-footer">
     <a class="mui-tab-item" href="index.html">
@@ -43,31 +44,20 @@
     </a>
 </nav>
 <div class="mui-content">
-    <!--搜索框-->
-    <div class="searchBox">
-        <input type="text" placeholder="请输入你想搜索的内容"/>
-        <span class="search">搜索</span>
-    </div>
-    <!--搜索历史-->
-    <div class="history mui-clearfix">
-       <span class="mui-pull-left">搜索历史</span>
-       <span class="mui-icon mui-icon-trash mui-pull-right"></span>
-       <span class="mui-pull-right clear">清除历史</span>
-    </div>
-
-    <!--模板-->
-    <script type="text/html" id="items">
-      {{each item}}
-         <li class="mui-table-view-cell">{{$value}}</li>
-      {{/each}}
-    </script>
-
-    <!--列表-->
-    <ul class="mui-table-view">
-        <!--<li class="mui-table-view-cell">Item 1</li>-->
-        <!--<li class="mui-table-view-cell">Item 2</li>-->
-        <!--<li class="mui-table-view-cell">Item 3</li>-->
-    </ul>
+    <form class="mui-input-group">
+        <div class="mui-input-row">
+            <label>用户名</label>
+            <input type="text" class="mui-input-clear height" placeholder="请输入用户名" name="userName">
+        </div>
+        <div class="mui-input-row">
+            <label>密码</label>
+            <input type="password" class="mui-input-password height" placeholder="请输入密码" name="password">
+        </div>
+        <div class="mui-button-row">
+            <button type="button" class="mui-btn mui-btn-primary width" >登录</button>
+        </div>
+        <a href="register.html" class="login">免费注册</a>
+    </form>
 </div>
 </body>
 </html>
