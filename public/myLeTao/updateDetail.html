@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <!--引入picker选择器css-->
+    <link rel="stylesheet" href="assets/mui/css/mui.picker.css">
+    <link rel="stylesheet" href="assets/mui/css/mui.poppicker.css">
+    <!--引入css-->
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/updateDetail.css"/>
+    <!--引入字体图标-->
+    <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css"/>
+    <script src="assets/mui/js/mui.min.js"></script>
+    <!--引入picker选择器js-->
+    <script src="assets/mui/js/mui.picker.js"></script>
+    <script src="assets/mui/js/mui.poppicker.js"></script>
+    <!--引入js-->
+    <script src="js/zepto.min.js"></script>
+    <!--引入模板-->
+    <script src="js/template-web.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/updateDetail.js"></script>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav my-header">
+    <a href="javaScript:;" class="mui-icon mui-icon-back"></a>
+    <h1 class="mui-title">商品详情</h1>
+</header>
+<nav class="mui-bar mui-bar-tab my-footer">
+    <a class="mui-tab-item mui-active" href="index.html">
+        <span class="mui-icon mui-icon-home"></span>
+        <span class="mui-tab-label">首页</span>
+    </a>
+    <a class="mui-tab-item" href="category.html">
+        <span class="mui-icon mui-icon-bars"></span>
+        <span class="mui-tab-label">分类</span>
+    </a>
+    <a class="mui-tab-item" href="cart.html">
+        <span class="fa fa-shopping-cart"></span>
+        <span class="mui-tab-label">购物车</span>
+    </a>
+    <a class="mui-tab-item" href="user.html">
+        <span class="mui-icon mui-icon-person"></span>
+        <span class="mui-tab-label">会员中心</span>
+    </a>
+</nav>
+
+<!--模板引擎-->
+<script type="text/html" id="updateDetail">
+    <div class="mui-slider">
+        <div class="mui-slider-group">
+            <div class="mui-slider-item"><a href="#"><img src="<%=pic[0].picAddr%>"/></a></div>
+        </div>
+    </div>
+    <div class="pBox">
+        <p><%=proName %></p>
+    </div>
+    <div class="price">
+        价格:
+        <span><%=oldPrice %></span>
+        <span><%=price %></span>
+    </div>
+    <div class="size">
+        尺寸:
+        <% var arr = productSize.split('-') %>
+        <% for(var i = arr[0]; i <= arr[1]; i++) { %>
+           <% if(i == size) { %>
+           <span class="orange"><%=i %></span>
+           <% } %>
+           <% if(i != size) { %>
+              <span><%=i %></span>
+           <% } %>
+        <% } %>
+    </div>
+    <div class="number mui-clearfix">
+        <p>数量:</p>
+        <span id="reduce">-</span>
+        <input type="text" id="textSize" value="<%=num %>"/>
+        <span id="increase">+</span>
+        <p>剩余:<%=productNum %></p>
+    </div>
+    <div class="box mui-clearfix">
+        <a href="javaScript:;" id="check">确认修改</a>
+    </div>
+</script>
+
+<div class="mui-content">
+    <div class="detailBox">
+
+    </div>
+</div>
+</body>
+</html>
