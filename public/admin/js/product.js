@@ -86,6 +86,7 @@ $(function(){
 	$('#fileUpload').fileupload({
 	    dataType: 'json',
 	    done: function (e, data) {
+			console.log(data);
 
 	    	pic.push(data._response.result);
 
