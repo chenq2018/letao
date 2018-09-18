@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>乐淘-用户管理</title>
+	<title>乐淘-商品管理</title>
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/system.css">
 	<script src="assets/jquery/jquery.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<!--引入template模板-->
 	<script src="assets/artTemplate/template-native.js"></script>
 	<script src="js/common.js"></script>
-	<script src="js/user.js"></script>
+	<!--引入js-->
+	<script src="js/category-first.js"></script>
 </head>
 <body>
 	<div class="system">
@@ -23,7 +25,7 @@
 			</div>
 			<div class="navs">
 				<ul class="list-unstyled">
-					<li class="active">
+					<li>
 						<a href="user.html">
 							<i class="fa fa-user"></i>
 							用户管理
@@ -36,7 +38,7 @@
 							<i class="fa fa-angle-right"></i>
 						</a>
 						<ul class="list-unstyled">
-							<li>
+							<li class="active">
 								<a href="category-first.html">一级分类管理</a>
 							</li>
 							<li>
@@ -63,7 +65,7 @@
 	                </div>
 	                <ul class="nav navbar-nav navbar-right">
 	                    <li>
-	                        <a href="javascript:;" class="login_out_bot" id="loginOut">
+	                        <a href="javascript:;" class="login_out_bot">
 	                            <i class="fa fa-sign-out"></i> 退出
 	                        </a>
 	                    </li>
@@ -71,34 +73,58 @@
 	            </nav>
 	        </div>
 	        <div class="body">
-	        	<table class="table table-bordered" id="userTable">
-	        		
+	        	<button class="operation btn btn-primary" data-toggle="modal" data-target=".category-first">添加分类</button>
+	        	<table class="table table-bordered" id="categoryFirstTable">
+	        		<!--<tr>-->
+	        			<!--<th>分类的编号</th>-->
+	        			<!--<th>分类名称</th>-->
+	        		<!--</tr>-->
+	        		<!--<tr>-->
+	        			<!--<td>1</td>-->
+	        			<!--<td>运动馆</td>-->
+	        		<!--</tr>-->
 	        	</table>
+	        	<div class="btn-group page">
+	        		<div class="btn btn-default" id="prev">上一页</div>
+	        		<div class="btn btn-default" id="next">下一页</div>
+	        	</div>
 	        </div>
 		</div>
 	</div>
-	<script id="userTpl" type="text/html">
+
+	<div class="modal fade category-first">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+					<h4 class="modal-title" id="myLargeModalLabel">添加分类</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="请输入分类的名称" name="name">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" id="btn">保存</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--引用模板-->
+	<script type="text/html" id="categoryFirstTemp">
 		<tr>
-			<th>用户名</th>
-			<th>电话</th>
-			<th>状态</th>
-			<th>操作</th>
+			<th>分类的编号</th>
+			<th>分类名称</th>
 		</tr>
-		<% for(var i=0;i<data.rows.length;i++){ %>
-			<tr>
-				<td><%=data.rows[i].username %></td>
-				<td><%=data.rows[i].mobile %></td>
-				<td>已启用</td>
-				<td>
-					<button 
-					data-id="<%=data.rows[i].id%>"
-					data-isDelete="<%=data.rows[i].isDelete %>"
-					type="button"
-					id="deleteBtn"
-					class="btn <%=data.rows[i].isDelete ? 'btn-danger' : 'btn-success' %>"><%=data.rows[i].isDelete ? '禁用' : '启用' %></button>
-				</td>
-			</tr>
+		<% for(var i = 0; i < rows.length; i++) { %>
+		<tr>
+			<td><%=rows[i].id %></td>
+			<td><%=rows[i].categoryName %></td>
+		</tr>
 		<% } %>
 	</script>
+
 </body>
 </html>
